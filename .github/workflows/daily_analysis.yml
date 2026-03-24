@@ -187,6 +187,10 @@ jobs:
           REALTIME_SOURCE_PRIORITY: ${{ vars.REALTIME_SOURCE_PRIORITY || 'tencent,akshare_sina,efinance,akshare_em' }}
           
         run: |
+
+          # 👇 添加这两行来打印变量值
+          echo "🔍 调试信息：AGENT_MODE = $AGENT_MODE"
+          echo "🔍 调试信息：AGENT_SKILLS = $AGENT_SKILLS"
           # 处理 LITELLM YAML 配置文件
           if [ -n "$LITELLM_CONFIG_YAML" ] && [ -n "$LITELLM_CONFIG" ]; then
             echo "📝 使用 GitHub Actions Secrets/Variables 中的 LITELLM_CONFIG_YAML 配置"
